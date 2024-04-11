@@ -85,6 +85,17 @@ The default setting (which selects the `small` model) works well for transcribin
 
     whisper japanese.wav --language Japanese
 
+> [!TIP]
+> If there is error of `Library not loaded: '/opt/homebrew/opt/mbedtls/lib/libmbedcrypto.13.dylib'`. This is probably
+> due to that ffmpeg was installed via homebrew. Uninstall both `mbedtls` and `librist` and then reinstalling ffmpeg
+> using:
+> 
+> ```console
+> brew uninstall librist --ignore-dependencies
+> brew uninstall mbedtls --ignore-dependencies
+> brew reinstall ffmpeg
+> ```
+
 Adding `--task translate` will translate the speech into English:
 
     whisper japanese.wav --language Japanese --task translate
