@@ -93,6 +93,17 @@ For example, to transcribe an audio file containing non-English speech, you can 
 whisper japanese.wav --language Japanese
 ```
 
+> [!TIP]
+> If there is error of `Library not loaded: '/opt/homebrew/opt/mbedtls/lib/libmbedcrypto.13.dylib'`. This is probably
+> due to that ffmpeg was installed via homebrew. Uninstall both `mbedtls` and `librist` and then reinstalling ffmpeg
+> using:
+>
+> ```console
+> brew uninstall librist --ignore-dependencies
+> brew uninstall mbedtls --ignore-dependencies
+> brew reinstall ffmpeg
+> ```
+
 To **translate** speech into English, use:
 
 ```bash
